@@ -1,0 +1,18 @@
+[
+	{
+	  "fruit": {
+	    "name": "apple",
+	    "color": "green",
+	    "price": 1.2,
+		"tags": ["cheap", "juice"]
+	  }
+	},
+	{
+	 "fruit": {
+		"name": "orange",
+		"color": "orange",
+		"price": 2,
+		"tags": ["juice", "vitamin"]
+	  }
+	}
+]
