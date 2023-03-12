@@ -1,0 +1,15 @@
+[/]
+animate-show-apps=false
+animation-time=0.40000000000000002
+apply-glossy-effect=false
+dash-max-icon-size=48
+dock-fixed=false
+dock-position='BOTTOM'
+extend-height=false
+isolate-monitors=true
+isolate-workspaces=true
+show-mounts=false
+show-mounts-network=false
+show-show-apps-button=false
+show-trash=false
+workspace-agnostic-urgent-windows=false
