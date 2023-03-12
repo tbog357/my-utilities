@@ -1,4 +1,5 @@
-# jq '.' sample/fruit.json
+- jq '.' sample/fruit.json
+```json
 [
   {
     "fruit": {
@@ -23,8 +24,10 @@
     }
   }
 ]
+```
 
-# jq '.[]' sample/fruit.json
+-  jq '.[]' sample/fruit.json
+```json
 {
   "fruit": {
     "name": "apple",
@@ -47,8 +50,9 @@
     ]
   }
 }
-
-# jq '.[0:1]' sample/fruit.json 
+```
+-  jq '.[0:1]' sample/fruit.json 
+```json
 [
   {
     "fruit": {
@@ -62,25 +66,29 @@
     }
   }
 ]
-
-# jq '.[0:1][] | .fruit.name,.fruit.color,.fruit.price' sample/fruit.json
+```
+-  jq '.[0:1][] | .fruit.name,.fruit.color,.fruit.price' sample/fruit.json
+```json
 "apple"
 "green"
 1.2
-
-# jq '.[].fruit.name' sample/fruit.json
+```
+-  jq '.[].fruit.name' sample/fruit.json
+```json
 "apple"
 "orange"
-
-# jq '.[] | keys' sample/fruit.json
+```
+-  jq '.[] | keys' sample/fruit.json
+```json
 [
   "fruit"
 ]
 [
   "fruit"
 ]
-
-# jq '.[].fruit | keys' sample/fruit.json
+```
+-  jq '.[].fruit | keys' sample/fruit.json
+```json
 [
   "color",
   "name",
@@ -93,30 +101,37 @@
   "price",
   "tags"
 ]
-
-# jq '.[] | length' sample/fruit.json 
+```
+-  jq '.[] | length' sample/fruit.json 
+```json
 2
-
-# Apply to an array
-# jq 'map(has("fruit"))' sample/fruit.json
+```
+-  Apply to an array
+```json
+-  jq 'map(has("fruit"))' sample/fruit.json
+```json
 [
   true,
   true
 ]
-
-# jq 'map(.fruit.price+2)' sample/fruit.json
+```
+-  jq 'map(.fruit.price+2)' sample/fruit.json
+```json
 [
   3.2,
   4
 ]
-
-# jq '[.[].fruit.price] | min' sample/fruit.json
+```
+-  jq '[.[].fruit.price] | min' sample/fruit.json
+```json
 1.2
-
-# jq '[.[].fruit.price] | max' sample/fruit.json
+```
+-  jq '[.[].fruit.price] | max' sample/fruit.json
+```json
 2
-
-# jq '.[] | select(.fruit.price==2)' sample/fruit.json
+```
+-  jq '.[] | select(.fruit.price==2)' sample/fruit.json
+```json
 {
   "fruit": {
     "name": "orange",
@@ -128,17 +143,20 @@
     ]
   }
 }
-	
-# jq '.[] | select(.fruit.price==2) | .fruit.name' sample/fruit.json
+```	
+-  jq '.[] | select(.fruit.price==2) | .fruit.name' sample/fruit.json
+```json
 "orange"
-
-# jq 'map(.fruit.name) | unique' sample/fruit.json
+```
+-  jq 'map(.fruit.name) | unique' sample/fruit.json
+```json
 [
   "apple",
   "orange"
 ]
-
-# jq '.[] | del(.fruit.name)' sample/fruit.json
+```
+-  jq '.[] | del(.fruit.name)' sample/fruit.json
+```json
 {
   "fruit": {
     "color": "green",
@@ -159,9 +177,10 @@
     ]
   }
 }
+```
 
-## Transforming json data
-# jq '.' sample/wikipedia.json
+-  jq '.' sample/wikipedia.json
+```json
 {
   "query": {
     "pages": [
@@ -184,8 +203,9 @@
     ]
   }
 }
-
-# jq '.query.pages' sample/wikipedia.json
+```
+-  jq '.query.pages' sample/wikipedia.json
+```json
 [
   {
     "21721040": {
@@ -204,16 +224,18 @@
     }
   }
 ]
-
-# jq '.query.pages | .[] | keys' sample/wikipedia.json
+```
+-  jq '.query.pages | .[] | keys' sample/wikipedia.json
+```json
 [
   "21721040"
 ]
 [
   "21721041"
 ]
-
-# jq '.query.pages | .[] | map(.)' sample/wikipedia.json
+```
+-  jq '.query.pages | .[] | map(.)' sample/wikipedia.json
+```json
 [
   {
     "pageid": 21721040,
@@ -230,8 +252,9 @@
     "extract": "A great place to learn about Java"
   }
 ]
-
-# jq '.query.pages | .[] | map(.) | .[] | keys' sample/wikipedia.json
+```
+-  jq '.query.pages | .[] | map(.) | .[] | keys' sample/wikipedia.json
+```json
 [
   "extract",
   "ns",
@@ -244,8 +267,9 @@
   "pageid",
   "title"
 ]
-
-# jq '.query.pages | .[] | map(.) | .[] | .pageid, .title, .ns, .extract' sample/wikipedia.json
+```
+-  jq '.query.pages | .[] | map(.) | .[] | .pageid, .title, .ns, .extract' sample/wikipedia.json
+```json
 21721040
 "Stack Overflow"
 0
@@ -254,8 +278,9 @@
 "Baeldung"
 0
 "A great place to learn about Java"
-
-# jq '.query.pages | .[] | map(.) | .[] | {page_title: .title, page_description: .extract}' sample/wikipedia.json
+```
+-  jq '.query.pages | .[] | map(.) | .[] | {page_title: .title, page_description: .extract}' sample/wikipedia.json
+```json
 {
   "page_title": "Stack Overflow",
   "page_description": "Some interesting text about Stack Overflow"
@@ -264,8 +289,10 @@
   "page_title": "Baeldung",
   "page_description": "A great place to learn about Java"
 }
+```
 
-# jq '.query.pages | [.[] | map(.) | .[] | {page_title: .title, page_description: .extract}]' sample/wikipedia.json
+-  jq '.query.pages | [.[] | map(.) | .[] | {page_title: .title, page_description: .extract}]' sample/wikipedia.json
+```json
 [
   {
     "page_title": "Stack Overflow",
@@ -276,3 +303,4 @@
     "page_description": "A great place to learn about Java"
   }
 ]
+```
