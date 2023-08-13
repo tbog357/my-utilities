@@ -1,29 +1,25 @@
 ## Useful Tools
+- https://github.com/debauchee/barrier (a KVM switch alternative)
 - https://github.com/junegunn/fzf
 - https://github.com/tmux/tmux
     - setting: .tmux.conf file
     - cheatsheet: https://tmuxcheatsheet.com/
-- nano
-    - setting: .nanorc
-- https://github.com/stedolan/jq
-    - tutorial: jq.txt
-- dconf
-    - dconf-dash-to-dock.txt: make dock look like dock on macbook
+- https://github.com/stedolan/jq (found it useful when working with data stored in elasticsearch)
+
 ## Gnome extension
 ![Gnome-Extension](gnome-extension.jpg)
 
 ## Useful commands
 - Area screenshot and send to system clipboard
-```
-    gnome-screenshot -acf /tmp/tmp.png
-```
-
-## Useful commands
+    ```
+        gnome-screenshot -acf /tmp/tmp.png
+    ```
 
 - Remove empty dirs
     ```
     find . -empty -type d -delete
     ```
+
 ## Modify terminal behavior
 - Show git branch and k8s context and namespace optionally:
     ```
