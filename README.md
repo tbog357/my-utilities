@@ -12,8 +12,11 @@
 ## Gnome extension
 ![Gnome-Extension](gnome-extension.jpg)
 
-## Useful screenshot with area
-gnome-screenshot -acf /tmp/tmp.png
+## Useful commands
+- Area screenshot and send to system clipboard
+```
+    gnome-screenshot -acf /tmp/tmp.png
+```
 
 ## Useful commands
 
