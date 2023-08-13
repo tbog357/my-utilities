@@ -12,6 +12,9 @@
 ## Gnome extension
 ![Gnome-Extension](gnome-extension.jpg)
 
+## Useful screenshot with area
+gnome-screenshot -acf /tmp/tmp.png
+
 ## Useful commands
 
 - Remove empty dirs
