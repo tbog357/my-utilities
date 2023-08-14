@@ -1,10 +1,10 @@
 ## Useful Tools
 - https://github.com/debauchee/barrier (a KVM switch alternative)
-- https://github.com/junegunn/fzf
-- https://github.com/tmux/tmux
+- https://github.com/junegunn/fzf (fuzzy search on terminal and more!)
+- https://github.com/tmux/tmux (terminal multiplexer)
     - setting: .tmux.conf file
     - cheatsheet: https://tmuxcheatsheet.com/
-- https://github.com/stedolan/jq (found it useful when working with data stored in elasticsearch)
+- https://github.com/stedolan/jq (found it useful when working with data stored in elasticsearch, take time to learn)
 
 ## Gnome extension
 ![Gnome-Extension](gnome-extension.jpg)
@@ -13,6 +13,11 @@
 - Area screenshot and send to system clipboard
     ```
         gnome-screenshot -acf /tmp/tmp.png
+    ```
+
+- Switch multi version of a program
+    ```
+        update-alternatives --config java
     ```
 
 - Remove empty dirs
