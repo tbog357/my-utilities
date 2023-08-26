@@ -1,5 +1,5 @@
 ## Useful Tools
-- https://github.com/debauchee/barrier (a KVM switch alternative)
+- https://github.com/symless/synergy-core (a KVM switch alternative)
 - https://github.com/junegunn/fzf (fuzzy search on terminal and more!)
 - https://github.com/tmux/tmux (terminal multiplexer)
     - setting: .tmux.conf file
