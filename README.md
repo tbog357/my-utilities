@@ -5,6 +5,17 @@
     - setting: .tmux.conf file
     - cheatsheet: https://tmuxcheatsheet.com/
 - https://github.com/stedolan/jq (found it useful when working with data stored in elasticsearch, take time to learn)
+## Alias 
+
+```
+## Switch Context and Namespace
+alias set_context="source ~/.kube/set_context_v2.sh"
+alias set_namespace="source ~/.kube/set_namespace_v2.sh"
+
+## Shorthand
+alias kubectl="kubectl "
+complete -o default -F __start_kubectl k
+```
 
 ## Gnome extension
 ![Gnome-Extension](gnome-extension.jpg)
@@ -49,6 +60,14 @@
         fi
     }
 
+    get_k8s_info_v2() {
+        if [ -n "$K8S_CONTEXT" ] && [ -n "K8S_NAMESPACE" ]
+        then
+            all_info="k8s-[${K8S_CONTEXT}|${K8S_NAMESPACE}]"
+            echo $all_info 2> /dev/null | sed -e 's/^/ /'
+        fi
+    }
+
     if [ -n "$force_color_prompt" ]; then
         if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
         # We have color support; assume it's compliant with Ecma-48
@@ -61,7 +80,7 @@
     fi
 
     if [ "$color_prompt" = yes ]; then
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;32m\]$(parse_git_branch)$(get_k8s_info)\[\033[00m\]\$ '
+        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;32m\]$(parse_git_branch)$(get_k8s_info_v2)\[\033[00m\]\$ '
     else
         PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)$(get_k8s_info)\$ '
     fi
