@@ -4,7 +4,7 @@
 - https://github.com/tmux/tmux (terminal multiplexer)
     - setting: .tmux.conf file
     - cheatsheet: https://tmuxcheatsheet.com/
-- https://github.com/stedolan/jq (found it useful when working with data stored in elasticsearch, take time to learn)
+- https://github.com/stedolan/jq
 ## Alias 
 
 ```
